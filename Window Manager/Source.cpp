@@ -1,3 +1,4 @@
+#include "D:/TX/TXLib.h"
 #include <SFML\Graphics.hpp>
 #include <iostream>
 #include "WinManager.h"
@@ -6,7 +7,7 @@
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1366, 768), "WinManager");
-		
+	
 	std::vector<sf::AbstWnd*> windows;
 
 	sf::Color fillColor = sf::Color::Black;

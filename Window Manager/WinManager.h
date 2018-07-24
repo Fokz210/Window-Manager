@@ -3,6 +3,14 @@
 #include "StandardCursor.h"
 #include <vector>
 
+class Noncopyable
+{
+public:
+	Noncopyable() {}
+	Noncopyable(const Noncopyable & that) = delete;
+	Noncopyable & operator = (const Noncopyable & that) = delete;
+};
+
 namespace sf
 {
 	class AbstWnd
@@ -129,6 +137,25 @@ namespace sf
 		int cursorPos;
 		Vector2f mousePos;
 		Clock timer;
+	};
+
+	class AbstInst
+	{
+	public:
+		AbstInst();
+		virtual void apply(Vector2f coords) = 0;
+	};
+
+	class Canvas :
+		public Noncopyable
+	{
+	public:
+		Canvas();
+		Canvas(Vector2f size, Texture * background = nullptr);
+
+	private:
+		RenderTexture texture_;
+		AbstInst * curr_instrument_;
 	};
 }
 

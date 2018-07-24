@@ -126,9 +126,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AbstWnd.cpp" />
+    <ClCompile Include="Canvas.cpp" />
     <ClCompile Include="PtrEngine.cpp" />
     <ClCompile Include="RectWnd.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="AbstInst.cpp" />
     <ClCompile Include="StandardCursor.cpp" />
     <ClCompile Include="TextWnd.cpp" />
     <ClCompile Include="WindowManager.cpp" />
