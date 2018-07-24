@@ -1,6 +1,6 @@
 #include "WinManager.h"
 #include <iostream>
-sf::TextWnd::TextWnd() :
+sfext::TextWnd::TextWnd() :
 	RectWnd(),
 	text_(),
 	engine_(nullptr),
@@ -13,7 +13,7 @@ sf::TextWnd::TextWnd() :
 
 }
 
-sf::TextWnd::TextWnd(RectangleShape shape, Font font, String * string, Text text, PtrEngine * engine) :
+sfext::TextWnd::TextWnd(RectangleShape shape, Font font, String * string, Text text, PtrEngine * engine) :
 	RectWnd(shape),
 	text_(text),
 	engine_(engine),
@@ -27,7 +27,7 @@ sf::TextWnd::TextWnd(RectangleShape shape, Font font, String * string, Text text
 	text_.setPosition(Vector2f(shape_.getPosition().x + 2.0f, shape_.getPosition().y + 2.0f));
 }
 
-sf::TextWnd::TextWnd(float x, float y, float width, float height, Color color, String * string, Text text, PtrEngine * engine) :
+sfext::TextWnd::TextWnd(float x, float y, float width, float height, Color color, String * string, Text text, PtrEngine * engine) :
 	RectWnd(x, y, width, height, color),
 	text_(text),
 	engine_(engine),
@@ -41,11 +41,11 @@ sf::TextWnd::TextWnd(float x, float y, float width, float height, Color color, S
 	text_.setPosition(Vector2f(shape_.getPosition().x + 2.0f, shape_.getPosition().y + 2.0f));
 }
 
-sf::TextWnd::~TextWnd()
+sfext::TextWnd::~TextWnd()
 {
 }
 
-void sf::TextWnd::OnClick()
+void sfext::TextWnd::OnClick()
 {
 	for (unsigned int i = 0; i < string_->getSize(); i++)
 	{
@@ -53,7 +53,7 @@ void sf::TextWnd::OnClick()
 	}
 }
 
-void sf::TextWnd::Draw(RenderWindow * wnd)
+void sfext::TextWnd::Draw(RenderWindow * wnd)
 {
 	
 	wnd->draw(shape_);
@@ -112,7 +112,7 @@ void sf::TextWnd::Draw(RenderWindow * wnd)
 	mousePos = wnd->mapPixelToCoords(Mouse::getPosition(*wnd));
 }
 
-sf::StandardCursor::TYPE sf::TextWnd::GetCursorType()
+sfext::StandardCursor::TYPE sfext::TextWnd::GetCursorType()
 {
 	return StandardCursor::TYPE::TEXT;
 }

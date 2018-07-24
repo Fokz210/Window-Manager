@@ -1,25 +1,25 @@
 #include "WinManager.h"
 #include <iostream>
 
-sf::WindowManager::WindowManager() :
+sfext::WindowManager::WindowManager() :
 	windows_(),
 	activeWindow(-1)
 {
 }
 
-sf::WindowManager::WindowManager(std::vector<AbstWnd*> windows) : 
+sfext::WindowManager::WindowManager(std::vector<AbstWnd*> windows) : 
 	windows_(windows),
 	activeWindow(-1)
 {
 }
 
-sf::WindowManager::~WindowManager()
+sfext::WindowManager::~WindowManager()
 {
 }
 
-void sf::WindowManager::Run(sf::RenderWindow * wnd)
+void sfext::WindowManager::Run(sf::RenderWindow * wnd)
 {
-	StandardCursor Cursor(sf::StandardCursor::TYPE::NORMAL);
+	StandardCursor Cursor(sfext::StandardCursor::TYPE::NORMAL);
 	Cursor.Set(wnd->getSystemHandle());
 	if (Mouse::isButtonPressed(Mouse::Button::Left) && activeWindow != -1)
 	{

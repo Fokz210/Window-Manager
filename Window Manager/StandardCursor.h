@@ -3,7 +3,7 @@
 #include <SFML\Graphics.hpp>
 #include <Windows.h>
 
-namespace sf
+namespace sfext
 {
 	class StandardCursor
 	{

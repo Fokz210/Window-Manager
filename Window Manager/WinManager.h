@@ -11,8 +11,10 @@ public:
 	Noncopyable & operator = (const Noncopyable & that) = delete;
 };
 
-namespace sf
+namespace sfext
 {
+	using namespace sf;
+
 	class AbstWnd
 	{
 	public:
@@ -150,8 +152,12 @@ namespace sf
 		public Noncopyable
 	{
 	public:
-		Canvas();
 		Canvas(Vector2f size, Texture * background = nullptr);
+		void LoadTexture(Texture texture);
+		Texture GetTexture();
+		void SetActiveInst(AbstInst * inst);
+		void OnClick();
+		void Draw();
 
 	private:
 		RenderTexture texture_;

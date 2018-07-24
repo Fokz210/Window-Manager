@@ -3,12 +3,13 @@
 #include <iostream>
 #include "WinManager.h"
 
+using namespace sfext;
 
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1366, 768), "WinManager");
 	
-	std::vector<sf::AbstWnd*> windows;
+	std::vector<AbstWnd*> windows;
 
 	sf::Color fillColor = sf::Color::Black;
 
@@ -20,20 +21,20 @@ int main()
 	auto lambda1 = [&fillColor]() { fillColor = sf::Color::White; };
 	auto lambda2 = [&fillColor]() { fillColor = sf::Color::Black; };
 
-	sf::PtrEngine engine;
+	PtrEngine engine;
 	sf::String sampleText = " ";
 
-	sf::Button<decltype(lambda1)> button1(300.0f, 768.0f / 2.0f - 25.0f, 150.0f, 50.0f, sf::Color::Color(181, 181, 181, 255), text, lambda1);
+	Button<decltype(lambda1)> button1(300.0f, 768.0f / 2.0f - 25.0f, 150.0f, 50.0f, sf::Color::Color(181, 181, 181, 255), text, lambda1);
 	text.setString("Off");
-	sf::Button<decltype(lambda2)> button2(1366.0f - 450.0f, 768.0f / 2.0f - 25.0f, 150.0f, 50.0f, sf::Color::Color(181, 181, 181, 255), text, lambda2);
+	Button<decltype(lambda2)> button2(1366.0f - 450.0f, 768.0f / 2.0f - 25.0f, 150.0f, 50.0f, sf::Color::Color(181, 181, 181, 255), text, lambda2);
 	text.setString("");
-	sf::TextWnd textWnd(1366.0f / 2.0f - 75, 768.0f / 4.0f * 3.0f, 150.0f, 50.0f, sf::Color::Color(181, 181, 181, 255), &sampleText, text, &engine);
+	TextWnd textWnd(1366.0f / 2.0f - 75, 768.0f / 4.0f * 3.0f, 150.0f, 50.0f, sf::Color::Color(181, 181, 181, 255), &sampleText, text, &engine);
 
 	windows.push_back(&button1);
 	windows.push_back(&button2);
 	windows.push_back(&textWnd);
 
-	sf::WindowManager winManager(windows);
+	WindowManager winManager(windows);
 	sf::Text onWindow("", font);
 	onWindow.setOrigin(sf::Vector2f(onWindow.getLocalBounds().width / 2, onWindow.getLocalBounds().height / 2));
 	onWindow.setPosition(sf::Vector2f(1366.0f / 2.0f, 500.0f));
