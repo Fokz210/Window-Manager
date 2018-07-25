@@ -152,7 +152,7 @@ namespace sfext
 		public Noncopyable
 	{
 	public:
-		Canvas(Vector2f size, Texture * background = nullptr);
+		Canvas(Vector2f size, Vector2f pos, RenderWindow * window, Texture * background = nullptr);
 		void LoadTexture(Texture texture);
 		Texture GetTexture();
 		void SetActiveInst(AbstInst * inst);
@@ -160,9 +160,13 @@ namespace sfext
 		void Draw();
 
 	private:
+		RenderWindow * window_;
 		RenderTexture texture_;
+		Sprite shape_;
 		AbstInst * curr_instrument_;
 	};
+
+	
 }
 
 
