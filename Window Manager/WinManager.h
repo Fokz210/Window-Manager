@@ -11,10 +11,8 @@ public:
 	Noncopyable & operator = (const Noncopyable & that) = delete;
 };
 
-namespace sfext
+namespace sf
 {
-	using namespace sf;
-
 	class AbstWnd
 	{
 	public:
@@ -132,40 +130,66 @@ namespace sfext
 		virtual StandardCursor::TYPE GetCursorType() override;
 
 	protected:
-		Text text_;
-		String * string_;
+		sf::Text text_;
+		sf::String * string_;
 		PtrEngine * engine_;
 		bool wasActive;
 		int cursorPos;
-		Vector2f mousePos;
-		Clock timer;
+		sf::Vector2f mousePos;
+		sf::Clock timer;
 	};
 
 	class AbstInst
 	{
 	public:
 		AbstInst();
-		virtual void apply(Vector2f coords) = 0;
+		virtual void Apply(Vector2f coords, float thickness, Color color, RenderTexture * texture) = 0;
 	};
 
 	class Canvas :
 		public Noncopyable
 	{
 	public:
-		Canvas(Vector2f size, Vector2f pos, RenderWindow * window, Texture * background = nullptr);
-		void LoadTexture(Texture texture);
-		Texture GetTexture();
+		Canvas(sf::Vector2f canvSize, sf::Vector2f pos, sf::Color color, float thickneess, sf::RenderWindow * window, sf::Texture * background = nullptr);
+		void LoadTexture(sf::Texture texture);
+		sf::Texture GetTexture();
 		void SetActiveInst(AbstInst * inst);
 		void OnClick();
 		void Draw();
+		void Clear(sf::Color clearColor);
 
 	private:
-		RenderWindow * window_;
-		RenderTexture texture_;
-		Sprite shape_;
+		sf::RenderWindow * window_;
+		sf::RenderTexture texture_;
+		sf::Sprite shape_;
 		AbstInst * curr_instrument_;
+		sf::Color color_;
+		float thickness_;
 	};
 
+	// In the shader code must be at least 3 used uniforms:
+	// vec2 position, float thickness, vec4 color and sampler2D texture.	
+	// Without them application will crash!
+	class FilterInst :
+		public AbstInst
+	{
+	public:
+		FilterInst(sf::Shader * filter);
+		virtual void Apply(sf::Vector2f coords, float thickness, sf::Color color, sf::RenderTexture * texture) override;
+		void ChangeShader(sf::Shader * filter);
+
+	protected:
+		sf::Shader * filter_;
+		void applyShader(const sf::Shader * shader, sf::RenderTarget * output);
+	};
+
+	class PaintInst :
+		public AbstInst
+	{
+	public:
+		PaintInst();
+		virtual void Apply(Vector2f coords, float thickness, Color color, RenderTexture * texture) override;
+	};
 	
 }
 

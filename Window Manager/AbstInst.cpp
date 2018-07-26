@@ -1,6 +1,6 @@
 #include "WinManager.h"
 
-sfext::AbstInst::AbstInst()
+sf::AbstInst::AbstInst()
 {
 
 }

@@ -2,7 +2,7 @@
 
 
 
-sfext::AbstWnd::AbstWnd()
+sf::AbstWnd::AbstWnd()
 {
 }
 

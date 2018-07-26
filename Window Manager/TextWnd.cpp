@@ -1,6 +1,6 @@
 #include "WinManager.h"
 #include <iostream>
-sfext::TextWnd::TextWnd() :
+sf::TextWnd::TextWnd() :
 	RectWnd(),
 	text_(),
 	engine_(nullptr),
@@ -13,7 +13,7 @@ sfext::TextWnd::TextWnd() :
 
 }
 
-sfext::TextWnd::TextWnd(RectangleShape shape, Font font, String * string, Text text, PtrEngine * engine) :
+sf::TextWnd::TextWnd(sf::RectangleShape shape, sf::Font font, sf::String * string, sf::Text text, PtrEngine * engine) :
 	RectWnd(shape),
 	text_(text),
 	engine_(engine),
@@ -27,7 +27,7 @@ sfext::TextWnd::TextWnd(RectangleShape shape, Font font, String * string, Text t
 	text_.setPosition(Vector2f(shape_.getPosition().x + 2.0f, shape_.getPosition().y + 2.0f));
 }
 
-sfext::TextWnd::TextWnd(float x, float y, float width, float height, Color color, String * string, Text text, PtrEngine * engine) :
+sf::TextWnd::TextWnd(float x, float y, float width, float height, sf::Color color, sf::String * string, sf::Text text, PtrEngine * engine) :
 	RectWnd(x, y, width, height, color),
 	text_(text),
 	engine_(engine),
@@ -41,11 +41,11 @@ sfext::TextWnd::TextWnd(float x, float y, float width, float height, Color color
 	text_.setPosition(Vector2f(shape_.getPosition().x + 2.0f, shape_.getPosition().y + 2.0f));
 }
 
-sfext::TextWnd::~TextWnd()
+sf::TextWnd::~TextWnd()
 {
 }
 
-void sfext::TextWnd::OnClick()
+void sf::TextWnd::OnClick()
 {
 	for (unsigned int i = 0; i < string_->getSize(); i++)
 	{
@@ -53,7 +53,7 @@ void sfext::TextWnd::OnClick()
 	}
 }
 
-void sfext::TextWnd::Draw(RenderWindow * wnd)
+void sf::TextWnd::Draw(RenderWindow * wnd)
 {
 	
 	wnd->draw(shape_);
@@ -69,7 +69,7 @@ void sfext::TextWnd::Draw(RenderWindow * wnd)
 			cursorPos--;
 			wasKeyPressed = true;
 		}
-		else if (Keyboard::isKeyPressed(Keyboard::Key::Right) && (cursorPos <= string_->getSize() || cursorPos <= 0) && !wasKeyPressed)
+		else if (Keyboard::isKeyPressed(Keyboard::Key::Right) && (unsigned int(cursorPos) <= string_->getSize() || cursorPos <= 0) && !wasKeyPressed)
 		{
 			cursorPos++;
 			wasKeyPressed = true;
@@ -112,7 +112,7 @@ void sfext::TextWnd::Draw(RenderWindow * wnd)
 	mousePos = wnd->mapPixelToCoords(Mouse::getPosition(*wnd));
 }
 
-sfext::StandardCursor::TYPE sfext::TextWnd::GetCursorType()
+sf::StandardCursor::TYPE sf::TextWnd::GetCursorType()
 {
 	return StandardCursor::TYPE::TEXT;
 }

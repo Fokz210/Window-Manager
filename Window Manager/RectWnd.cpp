@@ -2,16 +2,16 @@
 
 
 
-sfext::RectWnd::RectWnd()
+sf::RectWnd::RectWnd()
 {
 }
 
-sfext::RectWnd::RectWnd(sf::RectangleShape shape) :
+sf::RectWnd::RectWnd(sf::RectangleShape shape) :
 	shape_(shape)
 {
 }
 
-sfext::RectWnd::RectWnd(float x, float y, float width, float height, Color color) :
+sf::RectWnd::RectWnd(float x, float y, float width, float height, sf::Color color) :
 	shape_()
 {
 	shape_.setPosition(Vector2f(x, y));
@@ -19,35 +19,35 @@ sfext::RectWnd::RectWnd(float x, float y, float width, float height, Color color
 	shape_.setFillColor(color);
 }
 
-sfext::RectWnd::~RectWnd()
+sf::RectWnd::~RectWnd()
 {
 }
 
-void sfext::RectWnd::Activate()
+void sf::RectWnd::Activate()
 {
 	isActive = true;
 }
 
-void sfext::RectWnd::Deactivate()
+void sf::RectWnd::Deactivate()
 {
 	isActive = false;
 }
 
-void sfext::RectWnd::OnClick()
+void sf::RectWnd::OnClick()
 {
 }
 
-void sfext::RectWnd::Draw(sf::RenderWindow * wnd)
+void sf::RectWnd::Draw(sf::RenderWindow * wnd)
 {
 	wnd->draw(shape_);
 }
 
-bool sfext::RectWnd::IsHovered(sf::Vector2f pos)
+bool sf::RectWnd::IsHovered(sf::Vector2f pos)
 {
 	return pos.x >= shape_.getPosition().x && pos.x <= shape_.getPosition().x + shape_.getSize().x && pos.y >= shape_.getPosition().y && pos.y <= shape_.getPosition().y + shape_.getSize().y;
 }
 
-sfext::StandardCursor::TYPE sfext::RectWnd::GetCursorType()
+sf::StandardCursor::TYPE sf::RectWnd::GetCursorType()
 {
 	return StandardCursor::TYPE::HAND;
 }

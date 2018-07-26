@@ -1,30 +1,30 @@
 #include "WinManager.h"
 #include <iostream>
 
-sfext::PtrEngine::PtrEngine()
+sf::PtrEngine::PtrEngine()
 {
 }
 
-sfext::PtrEngine::~PtrEngine()
+sf::PtrEngine::~PtrEngine()
 {
 }
 
-char sfext::PtrEngine::getBufferedString()
+char sf::PtrEngine::getBufferedString()
 {
 	return buffer_;
 }
 
-bool sfext::PtrEngine::isBufferEmpty()
+bool sf::PtrEngine::isBufferEmpty()
 {
 	return !buffer_;
 }
 
-void sfext::PtrEngine::eraseBuffer()
+void sf::PtrEngine::eraseBuffer()
 {
 	buffer_ = NULL;
 }
 
-void sfext::PtrEngine::updateBuffer(Uint32 character)
+void sf::PtrEngine::updateBuffer(Uint32 character)
 {
 	buffer_ = static_cast<char>(character);
 }
