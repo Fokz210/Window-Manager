@@ -127,7 +127,6 @@
   <ItemGroup>
     <ClCompile Include="AbstWnd.cpp" />
     <ClCompile Include="Canvas.cpp" />
-    <ClCompile Include="FilterInst.cpp" />
     <ClCompile Include="PaintInst.cpp" />
     <ClCompile Include="PencilInst.cpp" />
     <ClCompile Include="PtrEngine.cpp" />

@@ -170,23 +170,6 @@ namespace sf
 		float thickness_;
 	};
 
-	// In the shader code must be at least 3 used uniforms:
-	// vec2 position, float thickness, vec4 color and sampler2D texture.	
-	// Without them application will crash!
-	/*class FilterInst :
-		public AbstInst
-	{
-	public:
-		FilterInst(sf::Shader * filter);
-		virtual void Apply(sf::Vector2f coords, float thickness, sf::Color color, sf::RenderTarget * texture) override;
-		virtual void Preview(sf::Vector2f coords, float thickness, sf::Color color, sf::RenderTarget * texture) override;
-		void ChangeShader(sf::Shader * filter);
-
-	protected:
-		sf::Shader * filter_;
-		void applyShader(const sf::Shader * shader, sf::RenderTarget * output);
-	};*/
-
 	class PaintInst :
 		public AbstInst
 	{

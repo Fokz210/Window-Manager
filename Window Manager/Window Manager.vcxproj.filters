@@ -42,9 +42,6 @@
     <ClCompile Include="Canvas.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FilterInst.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="PaintInst.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
