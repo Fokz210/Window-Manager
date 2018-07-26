@@ -41,9 +41,20 @@ void sf::Canvas::Draw()
 	texture_.display();
 	shape_.setTexture(texture_.getTexture());
 	window_->draw(shape_);
+	curr_instrument_->Preview(Vector2f(texture_.mapPixelToCoords(Mouse::getPosition(*window_))), thickness_, color_, window_);
 }
 
 void sf::Canvas::Clear(sf::Color clearColor)
 {
 	texture_.clear(clearColor);
+}
+
+void sf::Canvas::SetThickness(float thickness)
+{
+	thickness_ = thickness;
+}
+
+void sf::Canvas::SetColor(Color color)
+{
+	color_ = color;
 }

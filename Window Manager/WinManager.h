@@ -143,7 +143,8 @@ namespace sf
 	{
 	public:
 		AbstInst();
-		virtual void Apply(Vector2f coords, float thickness, Color color, RenderTexture * texture) = 0;
+		virtual void Apply(Vector2f coords, float thickness, Color color, RenderTarget * texture) = 0;
+		virtual void Preview(Vector2f coords, float thickness, Color color, RenderTarget * texture) = 0;
 	};
 
 	class Canvas :
@@ -157,6 +158,8 @@ namespace sf
 		void OnClick();
 		void Draw();
 		void Clear(sf::Color clearColor);
+		void SetThickness(float thickness);
+		void SetColor(Color color);
 
 	private:
 		sf::RenderWindow * window_;
@@ -170,27 +173,37 @@ namespace sf
 	// In the shader code must be at least 3 used uniforms:
 	// vec2 position, float thickness, vec4 color and sampler2D texture.	
 	// Without them application will crash!
-	class FilterInst :
+	/*class FilterInst :
 		public AbstInst
 	{
 	public:
 		FilterInst(sf::Shader * filter);
-		virtual void Apply(sf::Vector2f coords, float thickness, sf::Color color, sf::RenderTexture * texture) override;
+		virtual void Apply(sf::Vector2f coords, float thickness, sf::Color color, sf::RenderTarget * texture) override;
+		virtual void Preview(sf::Vector2f coords, float thickness, sf::Color color, sf::RenderTarget * texture) override;
 		void ChangeShader(sf::Shader * filter);
 
 	protected:
 		sf::Shader * filter_;
 		void applyShader(const sf::Shader * shader, sf::RenderTarget * output);
-	};
+	};*/
 
 	class PaintInst :
 		public AbstInst
 	{
 	public:
 		PaintInst();
-		virtual void Apply(Vector2f coords, float thickness, Color color, RenderTexture * texture) override;
+		virtual void Apply(Vector2f coords, float thickness, Color color, RenderTarget * texture) override;
+		virtual void Preview(sf::Vector2f coords, float thickness, sf::Color color, sf::RenderTarget * texture) override;
 	};
 	
+	class PencilInst :
+		public AbstInst
+	{
+	public:
+		PencilInst();
+		virtual void Apply(Vector2f coords, float thickness, Color color, RenderTarget * texture) override;
+		virtual void Preview(sf::Vector2f coords, float thickness, sf::Color color, sf::RenderTarget * texture) override;
+	};
 }
 
 
