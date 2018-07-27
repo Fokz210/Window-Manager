@@ -30,9 +30,6 @@
     <ClCompile Include="WindowManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PtrEngine.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="TextWnd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

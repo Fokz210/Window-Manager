@@ -33,8 +33,14 @@ void sf::RectWnd::Deactivate()
 	isActive = false;
 }
 
-void sf::RectWnd::OnClick()
+bool sf::RectWnd::OnClick(Event::MouseButtonEvent event)
 {
+	return false;
+}
+
+bool sf::RectWnd::OnTextEntered(Event::TextEvent event)
+{
+	return false;
 }
 
 void sf::RectWnd::Draw(sf::RenderWindow * wnd)
@@ -50,4 +56,14 @@ bool sf::RectWnd::IsHovered(sf::Vector2f pos)
 sf::StandardCursor::TYPE sf::RectWnd::GetCursorType()
 {
 	return StandardCursor::TYPE::HAND;
+}
+
+bool sf::RectWnd::OnKey(Event::KeyEvent event)
+{
+	return false;
+}
+
+bool sf::RectWnd::OnMouseMove(Event::MouseMoveEvent event)
+{
+	return false;
 }

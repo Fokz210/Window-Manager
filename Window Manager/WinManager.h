@@ -19,23 +19,37 @@ namespace sf
 		AbstWnd();
 		virtual void Activate() = 0;
 		virtual void Deactivate() = 0;
-		virtual void OnClick() = 0;
+		virtual bool OnClick(Event::MouseButtonEvent event) = 0;
+		virtual bool OnKey(Event::KeyEvent event) = 0;
+		virtual bool OnTextEntered(Event::TextEvent event) = 0;
 		virtual void Draw(RenderWindow * wnd) = 0;
 		virtual bool IsHovered(Vector2f pos) = 0;
 		virtual StandardCursor::TYPE GetCursorType() = 0;
+		virtual bool OnMouseMove(Event::MouseMoveEvent event) = 0;
 	};
 
-	class WindowManager
+	class WindowManager : 
+		public AbstWnd
 	{
 	public:
 		WindowManager();
 		WindowManager(std::vector<AbstWnd*> windows);
 		~WindowManager();
 		void Run(RenderWindow * wnd);
-		
+		virtual void Activate() override;
+		virtual void Deactivate() override;
+		virtual bool OnClick(Event::MouseButtonEvent event) override;
+		virtual bool OnKey(Event::KeyEvent event) override;
+		virtual bool OnTextEntered(Event::TextEvent event) override;
+		virtual void Draw(RenderWindow * wnd) override;
+		virtual bool IsHovered(Vector2f pos) override;
+		virtual StandardCursor::TYPE GetCursorType() override;
+		virtual bool OnMouseMove(Event::MouseMoveEvent event) override;
+	
 	private:
 		std::vector<AbstWnd*> windows_;
-		int activeWindow;
+		AbstWnd * activeWindow; 
+		bool isActive;
 	};
 
 	class RectWnd :
@@ -48,10 +62,13 @@ namespace sf
 		~RectWnd();
 		virtual void Activate() override;
 		virtual void Deactivate() override;
-		virtual void OnClick() override;
+		virtual bool OnClick(Event::MouseButtonEvent event) override;
+		virtual bool OnTextEntered(Event::TextEvent event) override;
 		virtual void Draw(RenderWindow * wnd) override;
 		virtual bool IsHovered(Vector2f pos) override;
 		virtual StandardCursor::TYPE GetCursorType() override;
+		virtual bool OnKey(Event::KeyEvent event) override;
+		virtual bool OnMouseMove(Event::MouseMoveEvent event) override;
 
 	protected:
 		sf::RectangleShape shape_;
@@ -60,7 +77,8 @@ namespace sf
 
 	template <class FN>
 	class Button :
-		public RectWnd
+		public RectWnd,
+		public NonCopyable
 	{
 	public:
 		Button(RectangleShape shape, Text text, FN function) :
@@ -87,9 +105,10 @@ namespace sf
 		{
 		}
 
-		virtual void OnClick() override
+		virtual bool OnClick(Event::MouseButtonEvent event) override
 		{
 			function_();
+			return true;
 		}
 
 		virtual void Draw(RenderWindow * wnd) override
@@ -103,40 +122,27 @@ namespace sf
 		FN function_;
 	};
 
-	class PtrEngine
-	{
-	public:
-		PtrEngine();
-		~PtrEngine();
-		char getBufferedString();
-		bool isBufferEmpty();
-		void eraseBuffer();
-		void updateBuffer(Uint32 character);
-
-	private:
-		char buffer_;
-	};
-
 	class TextWnd :
-		public RectWnd
+		public RectWnd, 
+		public NonCopyable
 	{
 	public:
-		TextWnd();
-		TextWnd(RectangleShape shape, Font font, String * string, Text text, PtrEngine * engine);
-		TextWnd(float x, float y, float width, float height, Color color, String * string, Text text, PtrEngine * engine);
+		TextWnd(RectangleShape shape, Font font, String * string, Text text);
+		TextWnd(float x, float y, float width, float height, Color color, String * string, Text text);
 		~TextWnd();
-		virtual void OnClick() override;
+		virtual bool OnClick(Event::MouseButtonEvent event) override;
 		virtual void Draw(RenderWindow * wnd) override;
 		virtual StandardCursor::TYPE GetCursorType() override;
+		virtual bool OnTextEntered(Event::TextEvent event) override;
+		virtual bool OnKey(Event::KeyEvent event) override;
 
 	protected:
 		sf::Text text_;
 		sf::String * string_;
-		PtrEngine * engine_;
 		bool wasActive;
 		int cursorPos;
-		sf::Vector2f mousePos;
 		sf::Clock timer;
+
 	};
 
 	class AbstInst
@@ -148,6 +154,7 @@ namespace sf
 	};
 
 	class Canvas :
+		public RectWnd,
 		public Noncopyable
 	{
 	public:
@@ -155,16 +162,19 @@ namespace sf
 		void LoadTexture(sf::Texture texture);
 		sf::Texture GetTexture();
 		void SetActiveInst(AbstInst * inst);
-		void OnClick();
-		void Draw();
+		virtual bool OnClick(Event::MouseButtonEvent event) override;
+		bool OnClick();
+		virtual void Draw(RenderWindow * wnd) override;
 		void Clear(sf::Color clearColor);
 		void SetThickness(float thickness);
 		void SetColor(Color color);
+		virtual bool OnKey(Event::KeyEvent event) override;
+	
 
 	private:
 		sf::RenderWindow * window_;
 		sf::RenderTexture texture_;
-		sf::Sprite shape_;
+		sf::Sprite shapeSprite_;
 		AbstInst * curr_instrument_;
 		sf::Color color_;
 		float thickness_;
