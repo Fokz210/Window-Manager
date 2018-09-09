@@ -45,6 +45,9 @@
     <ClCompile Include="PencilInst.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Spray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WinManager.h">
@@ -53,5 +56,10 @@
     <ClInclude Include="StandardCursor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sprayShader.frag">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

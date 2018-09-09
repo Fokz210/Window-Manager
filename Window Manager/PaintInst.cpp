@@ -6,7 +6,7 @@ sf::PaintInst::PaintInst() :
 
 }
 
-void sf::PaintInst::Apply(Vector2f coords, float thickness, Color color, RenderTarget * texture)
+void sf::PaintInst::Apply(Vector2f coords, float thickness, Color color, RenderTexture * texture)
 {
 	CircleShape circle;
 	circle.setRadius(thickness);

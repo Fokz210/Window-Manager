@@ -21,11 +21,9 @@ sf::WindowManager::~WindowManager()
 
 void sf::WindowManager::Run(sf::RenderWindow * wnd)
 {
-	Event event;
+	Event event = {};
 	while (wnd->pollEvent(event))
 	{
-		printf("Event: %d\n", event.type);
-
 		switch (event.type)
 		{
 		case Event::EventType::MouseButtonPressed:

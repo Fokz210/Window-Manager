@@ -149,7 +149,7 @@ namespace sf
 	{
 	public:
 		AbstInst();
-		virtual void Apply(Vector2f coords, float thickness, Color color, RenderTarget * texture) = 0;
+		virtual void Apply(Vector2f coords, float thickness, Color color, RenderTexture * texture) = 0;
 		virtual void Preview(Vector2f coords, float thickness, Color color, RenderTarget * texture) = 0;
 	};
 
@@ -185,7 +185,7 @@ namespace sf
 	{
 	public:
 		PaintInst();
-		virtual void Apply(Vector2f coords, float thickness, Color color, RenderTarget * texture) override;
+		virtual void Apply(Vector2f coords, float thickness, Color color, RenderTexture * texture) override;
 		virtual void Preview(sf::Vector2f coords, float thickness, sf::Color color, sf::RenderTarget * texture) override;
 	};
 	
@@ -194,8 +194,21 @@ namespace sf
 	{
 	public:
 		PencilInst();
-		virtual void Apply(Vector2f coords, float thickness, Color color, RenderTarget * texture) override;
+		virtual void Apply(Vector2f coords, float thickness, Color color, RenderTexture * texture) override;
 		virtual void Preview(sf::Vector2f coords, float thickness, sf::Color color, sf::RenderTarget * texture) override;
+	};
+
+	class Spray :
+		public AbstInst,
+		public Noncopyable
+	{
+	public:
+		Spray(Shader * sprayShader);
+		virtual void Apply(Vector2f coords, float thickness, Color color, RenderTexture * texture) override;
+		virtual void Preview(sf::Vector2f coords, float thickness, sf::Color color, sf::RenderTarget * texture) override;
+
+	private:
+		Shader * sprayShader_;
 	};
 }
 

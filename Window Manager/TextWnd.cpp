@@ -32,13 +32,18 @@ sf::TextWnd::~TextWnd()
 
 bool sf::TextWnd::OnClick(Event::MouseButtonEvent event)
 {
-	cursorPos = string_->getSize();
+	if (event.x - text_.getCharacterSize() / 4 > text_.findCharacterPos(string_->getSize()).x) 
+		cursorPos = string_->getSize();
+	else
+		cursorPos = 0;
+
+	float characterSize = text_.getCharacterSize();
+
 	for (unsigned int i = 0; i < string_->getSize(); i++)
 	{
-		if (event.x - text_.getCharacterSize() / 4 > text_.findCharacterPos(i).x && event.x - text_.getCharacterSize() / 4 < text_.findCharacterPos(i).x + text_.getCharacterSize() ) cursorPos = i + 1;
+		float characterPos = text_.findCharacterPos(i).x;
+		if (event.x - characterSize / 4 > characterPos && event.x - characterSize / 4 < characterPos + characterSize) cursorPos = i + 1;
 	}
-
-	printf("String %s: cursorPos changed to %d\n", string_->toAnsiString().c_str(), cursorPos);
 
 	return true;
 }
@@ -70,16 +75,18 @@ bool sf::TextWnd::OnTextEntered(Event::TextEvent event)
 	{
 		char buffer = char(event.unicode);
 
-		if (buffer == 8 && string_->getSize() > 0 && cursorPos > -1)
+		if (buffer == 8 && string_->getSize() > 0 && cursorPos > 0)
 		{
-			string_->erase(cursorPos -1 );
+			string_->erase(cursorPos - 1);
 			cursorPos--;
 		}
+
 		else if (buffer >= 32)
 		{
 			string_->insert(cursorPos , buffer);
 			cursorPos++;
 		}
+
 		text_.setString(*string_);
 	}
 	else if (isActive && !wasActive)

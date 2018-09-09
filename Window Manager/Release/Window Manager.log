@@ -1,7 +1,15 @@
-﻿  Canvas.cpp
-  Generating code
-  1 of 186 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
-  Finished generating code
-  Window Manager.vcxproj -> D:\Users\chere\Documents\GitHub\Window-Manager\Release\Window Manager.exe
+﻿  AbstWnd.cpp
+  Canvas.cpp
+  PaintInst.cpp
+  PencilInst.cpp
+d:\users\chere\documents\github\window-manager\window manager\pencilinst.cpp(10): error C2511: 'void sf::PencilInst::Apply(sf::Vector2f,float,sf::Color,sf::RenderTarget *)': overloaded member function not found in 'sf::PencilInst'
+  d:\users\chere\documents\github\window-manager\window manager\winmanager.h(192): note: see declaration of 'sf::PencilInst'
+d:\users\chere\documents\github\window-manager\window manager\pencilinst.cpp(22): error C2511: 'void sf::PencilInst::Preview(sf::Vector2f,float,sf::Color,sf::RenderTexture *)': overloaded member function not found in 'sf::PencilInst'
+  d:\users\chere\documents\github\window-manager\window manager\winmanager.h(192): note: see declaration of 'sf::PencilInst'
+  RectWnd.cpp
+  Source.cpp
+  AbstInst.cpp
+  TextWnd.cpp
+d:\users\chere\documents\github\window-manager\window manager\textwnd.cpp(40): warning C4244: 'initializing': conversion from 'unsigned int' to 'float', possible loss of data
+  WindowManager.cpp
+  Spray.cpp

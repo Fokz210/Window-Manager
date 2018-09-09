@@ -3050,3 +3050,185 @@ Dumping objects ->
 {194} normal block at 0x00950578, 16 bytes long.
  Data: <p               > 70 A5 94 00 00 00 00 00 00 00 00 00 00 00 00 00 
 Object dump complete.
+TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300] - ERROR: Внимание: Обнаружены утечки памяти!
+
+Detected memory leaks!
+Dumping objects ->
+{2368} normal block at 0x0A0D6A30, 64 bytes long.
+ Data: <N   o       J   > 4E 00 00 00 6F 00 00 00 20 00 00 00 4A 00 00 00 
+{2367} normal block at 0x0A0E00F0, 8 bytes long.
+ Data: <  r     > A4 F8 72 0F 00 00 00 00 
+{2366} normal block at 0x0A0D6950, 64 bytes long.
+ Data: <N   o       J   > 4E 00 00 00 6F 00 00 00 20 00 00 00 4A 00 00 00 
+{2365} normal block at 0x0A0E0630, 8 bytes long.
+ Data: <0 r     > 30 F8 72 0F 00 00 00 00 
+{2364} normal block at 0x0A0D68E0, 64 bytes long.
+ Data: <N   o       J   > 4E 00 00 00 6F 00 00 00 20 00 00 00 4A 00 00 00 
+{2363} normal block at 0x0A0E00B8, 8 bytes long.
+ Data: <` r     > 60 F4 72 0F 00 00 00 00 
+{2362} normal block at 0x0A0D6F70, 64 bytes long.
+ Data: <N   o       J   > 4E 00 00 00 6F 00 00 00 20 00 00 00 4A 00 00 00 
+{2361} normal block at 0x0A0E0780, 8 bytes long.
+ Data: <  r     > EC F3 72 0F 00 00 00 00 
+{2360} normal block at 0x0A0D6790, 64 bytes long.
+ Data: <N   o       J   > 4E 00 00 00 6F 00 00 00 20 00 00 00 4A 00 00 00 
+{2359} normal block at 0x0A0E0400, 8 bytes long.
+ Data: <  r     > 1C F0 72 0F 00 00 00 00 
+{2358} normal block at 0x0A0D6DB0, 64 bytes long.
+ Data: <N   o       J   > 4E 00 00 00 6F 00 00 00 20 00 00 00 4A 00 00 00 
+{2357} normal block at 0x0A0E0128, 8 bytes long.
+ Data: <  r     > A8 EF 72 0F 00 00 00 00 
+{2356} normal block at 0x0A0D6E90, 64 bytes long.
+ Data: <N   o       J   > 4E 00 00 00 6F 00 00 00 20 00 00 00 4A 00 00 00 
+{2355} normal block at 0x0A0E0748, 8 bytes long.
+ Data: <  r     > D8 EB 72 0F 00 00 00 00 
+{2354} normal block at 0x0A0D7210, 64 bytes long.
+ Data: <N   o       J   > 4E 00 00 00 6F 00 00 00 20 00 00 00 4A 00 00 00 
+{2353} normal block at 0x0A0E0518, 8 bytes long.
+ Data: <d r     > 64 EB 72 0F 00 00 00 00 
+{2352} normal block at 0x0A0D6BF0, 64 bytes long.
+ Data: <N   o       J   > 4E 00 00 00 6F 00 00 00 20 00 00 00 4A 00 00 00 
+{2351} normal block at 0x0A0E01D0, 8 bytes long.
+ Data: <  r     > 94 E7 72 0F 00 00 00 00 
+{2350} normal block at 0x0A0D64F0, 64 bytes long.
+ Data: <N   o       J   > 4E 00 00 00 6F 00 00 00 20 00 00 00 4A 00 00 00 
+{2349} normal block at 0x0A0E04E0, 8 bytes long.
+ Data: <  r     > 20 E7 72 0F 00 00 00 00 
+{2348} normal block at 0x0A0D6870, 64 bytes long.
+ Data: <N   o       J   > 4E 00 00 00 6F 00 00 00 20 00 00 00 4A 00 00 00 
+{2347} normal block at 0x0A0E0710, 8 bytes long.
+ Data: <P r     > 50 E3 72 0F 00 00 00 00 
+{2346} normal block at 0x0A0D6F00, 64 bytes long.
+ Data: <N   o       J   > 4E 00 00 00 6F 00 00 00 20 00 00 00 4A 00 00 00 
+{2345} normal block at 0x0A0E06D8, 8 bytes long.
+ Data: <  r     > DC E2 72 0F 00 00 00 00 
+{2344} normal block at 0x035000D8, 64 bytes long.
+ Data: <N   o       J   > 4E 00 00 00 6F 00 00 00 20 00 00 00 4A 00 00 00 
+{2343} normal block at 0x0A0E05F8, 8 bytes long.
+ Data: <  r     > 0C DF 72 0F 00 00 00 00 
+{2342} normal block at 0x034FFF18, 64 bytes long.
+ Data: <N   o       J   > 4E 00 00 00 6F 00 00 00 20 00 00 00 4A 00 00 00 
+{2341} normal block at 0x0A0E05C0, 8 bytes long.
+ Data: <  r     > 98 DE 72 0F 00 00 00 00 
+{2340} normal block at 0x034FFEA8, 64 bytes long.
+ Data: <N   o       J   > 4E 00 00 00 6F 00 00 00 20 00 00 00 4A 00 00 00 
+{2339} normal block at 0x0A0E0160, 8 bytes long.
+ Data: <  r     > C8 DA 72 0F 00 00 00 00 
+{2338} normal block at 0x034FFE38, 64 bytes long.
+ Data: <N   o       J   > 4E 00 00 00 6F 00 00 00 20 00 00 00 4A 00 00 00 
+{2337} normal block at 0x0A0E0550, 8 bytes long.
+ Data: <T r     > 54 DA 72 0F 00 00 00 00 
+{2336} normal block at 0x0A0DFF30, 8 bytes long.
+ Data: < ,      > DC 2C 0D 0A 00 00 00 00 
+{2335} normal block at 0x0A0D2CD8, 940 bytes long.
+ Data: < ?r 0           > 08 3F 72 0F 30 FF 0D 0A 00 00 00 00 00 00 00 00 
+{231} normal block at 0x007974A8, 72 bytes long.
+ Data: <,Lr             > 2C 4C 72 0F CD CD CD CD 18 00 00 00 00 00 00 00 
+{199} normal block at 0x007914E0, 32 bytes long.
+ Data: <P   a   i   n   > 50 00 00 00 61 00 00 00 69 00 00 00 6E 00 00 00 
+{198} normal block at 0x0079E5A0, 8 bytes long.
+ Data: <$ U     > 24 E3 55 00 00 00 00 00 
+{197} normal block at 0x0079E3A8, 8 bytes long.
+ Data: < Az     > 10 41 7A 00 00 00 00 00 
+{196} normal block at 0x007A4110, 16 bytes long.
+ Data: <  y             > A8 E3 79 00 00 00 00 00 00 00 00 00 00 00 00 00 
+Object dump complete.
+TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300] - ERROR: Внимание: Обнаружены утечки памяти!
+
+Detected memory leaks!
+Dumping objects ->
+{197} normal block at 0x0070EBC0, 8 bytes long.
+ Data: < Aq     > D8 41 71 00 00 00 00 00 
+{196} normal block at 0x007141D8, 16 bytes long.
+ Data: <  p             > C0 EB 70 00 00 00 00 00 00 00 00 00 00 00 00 00 
+Object dump complete.
+TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300] - ERROR: Внимание: Обнаружены утечки памяти!
+
+Detected memory leaks!
+Dumping objects ->
+{197} normal block at 0x0080B2C8, 8 bytes long.
+ Data: <        > C0 07 81 00 00 00 00 00 
+{196} normal block at 0x008107C0, 16 bytes long.
+ Data: <                > C8 B2 80 00 00 00 00 00 00 00 00 00 00 00 00 00 
+Object dump complete.
+TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300] - ERROR: Внимание: Обнаружены утечки памяти!
+
+Detected memory leaks!
+Dumping objects ->
+{195} normal block at 0x00FBB290, 8 bytes long.
+ Data: <8       > 38 17 FC 00 00 00 00 00 
+{194} normal block at 0x00FC1738, 16 bytes long.
+ Data: <                > 90 B2 FB 00 00 00 00 00 00 00 00 00 00 00 00 00 
+Object dump complete.
+TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300] - ERROR: Внимание: Обнаружены утечки памяти!
+
+Detected memory leaks!
+Dumping objects ->
+{197} normal block at 0x010A3870, 8 bytes long.
+ Data: <        > 20 97 0A 01 00 00 00 00 
+{196} normal block at 0x010A9720, 16 bytes long.
+ Data: <p8              > 70 38 0A 01 00 00 00 00 00 00 00 00 00 00 00 00 
+Object dump complete.
+TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300] - ERROR: Внимание: Обнаружены утечки памяти!
+
+Detected memory leaks!
+Dumping objects ->
+{197} normal block at 0x000C1330, 8 bytes long.
+ Data: < \      > 10 5C 0C 00 00 00 00 00 
+{196} normal block at 0x000C5C10, 16 bytes long.
+ Data: <0               > 30 13 0C 00 00 00 00 00 00 00 00 00 00 00 00 00 
+Object dump complete.
+TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300] - ERROR: Внимание: Обнаружены утечки памяти!
+
+Detected memory leaks!
+Dumping objects ->
+{195} normal block at 0x0128C2F8, 8 bytes long.
+ Data: < !)     > 08 21 29 01 00 00 00 00 
+{194} normal block at 0x01292108, 16 bytes long.
+ Data: <  (             > F8 C2 28 01 00 00 00 00 00 00 00 00 00 00 00 00 
+Object dump complete.
+TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300] - ERROR: Внимание: Обнаружены утечки памяти!
+
+Detected memory leaks!
+Dumping objects ->
+{195} normal block at 0x0120BA48, 8 bytes long.
+ Data: <  !     > 18 16 21 01 00 00 00 00 
+{194} normal block at 0x01211618, 16 bytes long.
+ Data: <H               > 48 BA 20 01 00 00 00 00 00 00 00 00 00 00 00 00 
+Object dump complete.
+TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300] - ERROR: Внимание: Обнаружены утечки памяти!
+
+Detected memory leaks!
+Dumping objects ->
+{195} normal block at 0x002EC278, 8 bytes long.
+ Data: <  /     > 18 1C 2F 00 00 00 00 00 
+{194} normal block at 0x002F1C18, 16 bytes long.
+ Data: <x .             > 78 C2 2E 00 00 00 00 00 00 00 00 00 00 00 00 00 
+Object dump complete.
+TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300] - ERROR: Внимание: Обнаружены утечки памяти!
+
+Detected memory leaks!
+Dumping objects ->
+{195} normal block at 0x001EC340, 8 bytes long.
+ Data: <(       > 28 20 1F 00 00 00 00 00 
+{194} normal block at 0x001F2028, 16 bytes long.
+ Data: <@               > 40 C3 1E 00 00 00 00 00 00 00 00 00 00 00 00 00 
+Object dump complete.
+TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300] - ERROR: Внимание: Обнаружены утечки памяти!
+
+Detected memory leaks!
+Dumping objects ->
+{195} normal block at 0x00BFD050, 8 bytes long.
+ Data: <        > 80 20 C0 00 00 00 00 00 
+{194} normal block at 0x00C02080, 16 bytes long.
+ Data: <P               > 50 D0 BF 00 00 00 00 00 00 00 00 00 00 00 00 00 
+Object dump complete.
+TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300] - ERROR: Внимание: Обнаружены утечки памяти!
+
+Detected memory leaks!
+Dumping objects ->
+{195} normal block at 0x0002B130, 8 bytes long.
+ Data: <8       > 38 04 03 00 00 00 00 00 
+{194} normal block at 0x00030438, 16 bytes long.
+ Data: <0               > 30 B1 02 00 00 00 00 00 00 00 00 00 00 00 00 00 
+Object dump complete.

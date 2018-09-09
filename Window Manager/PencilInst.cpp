@@ -6,7 +6,7 @@ sf::PencilInst::PencilInst() :
 
 }
 
-void sf::PencilInst::Apply(Vector2f coords, float thickness, Color color, RenderTarget * texture)
+void sf::PencilInst::Apply(Vector2f coords, float thickness, Color color, RenderTexture * texture)
 {
 	RectangleShape rect;
 	rect.setSize(Vector2f(thickness * 2, thickness * 2));
