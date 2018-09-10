@@ -2,7 +2,7 @@
 #include "D:/TX/TXLib.h"
 #include <SFML\Graphics.hpp>
 #include <iostream>
-#include "WinManager.h"
+#include "../Include/WinManager.h"
 
 int main()
 {
@@ -25,19 +25,22 @@ int main()
 	sf::PencilInst pencil;
 	sf::PaintInst paint;
 
+	std::vector<sf::AbstInst*> palette_vector;
+	palette_vector.push_back(&pencil);
+	palette_vector.push_back(&paint);
+
+	sf::Palette palette(palette_vector);
+
 	sf::Shader sprayShader;
 	sprayShader.loadFromFile("sprayShader.frag", sf::Shader::Fragment);
 
 	sf::Spray spray(&sprayShader);
 
-	sf::Canvas canvas1(sf::Vector2f(810, 730), sf::Vector2f(100, 250), sf::Color::Black, 30, &window);
-	sf::Canvas canvas2(sf::Vector2f(810, 730), sf::Vector2f(1010, 250), sf::Color::Black, 30, &window);
+	sf::Canvas canvas1(sf::Vector2f(810, 730), sf::Vector2f(100, 250), sf::Color::Black, 30, palette, &window);
+	sf::Canvas canvas2(sf::Vector2f(810, 730), sf::Vector2f(1010, 250), sf::Color::Black, 30, palette, &window);
 	
 	canvas1.Clear(sf::Color::White);
 	canvas2.Clear(sf::Color::White);
-
-	canvas1.SetActiveInst(&spray);
-	canvas2.SetActiveInst(&paint);
 
 	std::vector<sf::AbstWnd*> windows;
 	windows.push_back(&text1);
@@ -48,7 +51,6 @@ int main()
 	window.setKeyRepeatEnabled(true);
 
 	sf::WindowManager manager(windows);
-	
 	
 	while (window.isOpen())
 	{

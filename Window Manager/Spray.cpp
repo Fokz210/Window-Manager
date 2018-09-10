@@ -1,7 +1,12 @@
-#include "WinManager.h"
+#include "../Include/WinManager.h"
 
 sf::Spray::Spray(Shader * sprayShader) :
-	sprayShader_(sprayShader)
+	sprayShader_(sprayShader),
+	AbstInst({
+			"Spray",
+			Texture(),
+			Texture(),
+		})
 {
 }
 

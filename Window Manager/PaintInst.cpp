@@ -1,7 +1,11 @@
-#include "WinManager.h"
+#include "../Include/WinManager.h"
 
 sf::PaintInst::PaintInst() :
-	AbstInst()
+	AbstInst({
+			"Paint",
+			Texture(),
+			Texture(),
+			})
 {
 
 }

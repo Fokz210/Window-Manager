@@ -1,4 +1,4 @@
-#include "WinManager.h"
+#include "../Include/WinManager.h"
 #include <iostream>
 
 
@@ -37,7 +37,7 @@ bool sf::TextWnd::OnClick(Event::MouseButtonEvent event)
 	else
 		cursorPos = 0;
 
-	float characterSize = text_.getCharacterSize();
+	float characterSize = float(text_.getCharacterSize());
 
 	for (unsigned int i = 0; i < string_->getSize(); i++)
 	{

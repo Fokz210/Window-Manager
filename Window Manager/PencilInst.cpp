@@ -1,7 +1,11 @@
-#include "WinManager.h"
+#include "../Include/WinManager.h"
 
 sf::PencilInst::PencilInst() :
-	AbstInst()
+	AbstInst({
+			"Pencil", 
+			Texture(),
+			Texture(),
+			})
 {
 
 }

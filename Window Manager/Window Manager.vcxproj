@@ -127,7 +127,9 @@
   <ItemGroup>
     <ClCompile Include="AbstWnd.cpp" />
     <ClCompile Include="Canvas.cpp" />
+    <ClCompile Include="InstData.cpp" />
     <ClCompile Include="PaintInst.cpp" />
+    <ClCompile Include="Palette.cpp" />
     <ClCompile Include="PencilInst.cpp" />
     <ClCompile Include="RectWnd.cpp" />
     <ClCompile Include="Source.cpp" />
@@ -138,8 +140,8 @@
     <ClCompile Include="Spray.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="StandardCursor.h" />
-    <ClInclude Include="WinManager.h" />
+    <ClInclude Include="..\Include\StandardCursor.h" />
+    <ClInclude Include="..\Include\WinManager.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="sprayShader.frag" />

@@ -48,12 +48,18 @@
     <ClCompile Include="Spray.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Palette.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InstData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="WinManager.h">
+    <ClInclude Include="..\Include\StandardCursor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="StandardCursor.h">
+    <ClInclude Include="..\Include\WinManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,4 +1,4 @@
-#include "StandardCursor.h"
+#include "../Include/StandardCursor.h"
 
 sf::StandardCursor::StandardCursor(const sf::StandardCursor::TYPE t)
 {
